@@ -1,0 +1,17 @@
+<h1 style="color: red; text-align: center;">Liste des utilisateurs</h1>
+
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Nom</th>
+    </tr>
+
+    <tr *ngFor="let e of utilisateurs">
+        <td>{{e.id}}</td>
+        <td>{{e.nom}}</td>
+         </tr>
+</table>
+</div>
+
+

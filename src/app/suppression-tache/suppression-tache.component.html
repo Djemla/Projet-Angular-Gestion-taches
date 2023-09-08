@@ -1,0 +1,18 @@
+<h1 style="color: blue; text-align: center;">Formulaire de suppression tache</h1>
+<form>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Id: </label>
+        <div class="col-sm-4">
+          <input type="number" [(ngModel)]="id" name="pId" >
+          <!-- Pour utiliser le ngModel, il faut importer le formsModule dans le composant principal app.module-->
+        </div>
+      </div>
+
+   
+
+<input type="button" value="Supprimer" class="btn btn-danger" (click)="supprimer()">
+<!-- lorsqu'on va cliquer sur ajouter, la methode ajouter va appeler la methode service pour faire l'ajout dans la bdd par le web service-->
+</form>
+
+<h3 style="color: red; text-align: center;" *ngIf="indice">Suppression KO!!!</h3>
+

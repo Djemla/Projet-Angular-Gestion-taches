@@ -1,0 +1,26 @@
+<h1 style="color: red; text-align: center;">Liste des taches</h1>
+
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Date Echeance</th>
+        <th>Statut</th>
+        <th>Priorité</th>
+        <th>Utilisateur</th>
+    </tr>
+
+    <tr *ngFor="let e of taches">
+        <td>{{e.id}}</td>
+        <td>{{e.titre}}</td>
+        <td>{{e.description}}</td>
+        <td>{{e.date_Echeance | date :'dd/MM/yyyy'}}</td>
+        <td>{{e.date_Echeance | statut}}</td>
+        <td>{{e.priorite}}</td>
+        <td *ngIf="e.utilisateur">{{e.utilisateur.nom}}</td>
+    </tr>
+</table>
+</div>
+

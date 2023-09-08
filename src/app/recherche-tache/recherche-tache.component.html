@@ -1,0 +1,46 @@
+<h1 style="color: blue; text-align: center;">Formulaire de recherche tache</h1>
+<form>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Id: </label>
+        <div class="col-sm-4">
+          <input type="number" [(ngModel)]="id" name="pId" >
+          <!-- Pour utiliser le ngModel, il faut importer le formsModule dans le composant principal app.module-->
+        </div>
+      </div>
+
+   
+
+<input type="button" value="Rechercher" class="btn btn-success" (click)="rechercher()">
+<!-- lorsqu'on va cliquer sur rechercher, la methode rechercher va appeler la methode service pour faire l'ajout dans la bdd par le web service-->
+</form>
+<br/>
+<br/>
+
+
+
+<div class="container" *ngIf="taches!=undefined && indice==false">
+<h1 style="color: red; text-align: center;">Liste des taches de l'utilisateur</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Date Echeance</th>
+        <th>Priorité</th>
+        <th>Utilisateur</th>
+    </tr>
+
+    <tr *ngFor="let e of taches">
+        <td>{{e.id}}</td>
+        <td>{{e.titre}}</td>
+        <td>{{e.description}}</td>
+        <td>{{e.date_Echeance | date :'dd/MM/yyyy'}}</td>
+        <td>{{e.priorite}}</td>
+        <td *ngIf="e.utilisateur">{{e.utilisateur.nom}}</td>
+         </tr>
+</table>
+</div>
+
+<h3 style="color: red; text-align: center;" *ngIf="indice">Recherche KO!!!</h3>
+
+

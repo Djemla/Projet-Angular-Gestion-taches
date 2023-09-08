@@ -1,0 +1,46 @@
+
+
+<h1 style="color: blue; text-align: center;">Formulaire d'ajout tache</h1>
+<form>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Titre: </label>
+        <div class="col-sm-4">
+          <input type="text" [(ngModel)]="tache.titre" name="pTitre" >
+          <!-- Pour utiliser le ngModel, il faut importer le formsModule dans le composant principal app.module-->
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Description: </label>
+        <div class="col-sm-4">
+          <input type="text" [(ngModel)]="tache.description" name="pDescription" >
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Date echeance: </label>
+        <div class="col-sm-4">
+          <input type="date" [(ngModel)]="tache.date_Echeance" name="pDateEcheance" >
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Priorite: </label>
+        <div class="col-sm-4">
+          <input type="text" [(ngModel)]="tache.priorite" name="pPriorite" >
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Id utilisateur: </label>
+        <div class="col-sm-4">
+          <select [(ngModel)]="user.id" class="form-control" name="pUser">
+            <option *ngFor="let u of users" [ngValue]="u.id">{{u.id}} - {{u.nom}}</option>
+          </select>
+        </div>
+      </div>
+
+<input type="button" value="Ajouter" class="btn btn-success" (click)="ajouter()">
+<!-- lorsqu'on va cliquer sur ajouter, la methode ajouter va appeler la methode service pour faire l'ajout dans la bdd par le web service-->
+</form>
+

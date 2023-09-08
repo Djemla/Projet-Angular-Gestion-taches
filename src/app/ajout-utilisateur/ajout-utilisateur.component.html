@@ -1,0 +1,19 @@
+
+
+<h1 style="color: blue; text-align: center;">Formulaire d'ajout utilisateur</h1>
+<form>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Nom: </label>
+        <div class="col-sm-4">
+          <input type="text" [(ngModel)]="utilisateur.nom" name="pNom" >
+          <!-- Pour utiliser le ngModel, il faut importer le formsModule dans le composant principal app.module-->
+        </div>
+      </div>
+
+      
+
+<input type="button" value="Ajouter" class="btn btn-success" (click)="ajouter()">
+<!-- lorsqu'on va cliquer sur ajouter, la methode ajouter va appeler la methode service pour faire l'ajout dans la bdd par le web service-->
+</form>
+
+
